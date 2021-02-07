@@ -1,0 +1,66 @@
+<manifest package="ir.omidzakeri.notepad"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<application
+			android:name="ir.omidzakeri.notepad.App"
+			android:allowBackup="true"
+			android:icon="@mipmap/notepad"
+			android:label="@string/app_name"
+			android:supportsRtl="false"
+			android:theme="@style/AppTheme"
+			tools:replace="android:supportsRtl"
+			>
+
+		<activity
+				android:name="ir.omidzakeri.notepad.activities.home.HomeActivity"
+				android:label="@string/app_name"
+				>
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+
+				<data android:scheme="file"/>
+				<data android:mimeType="*/*"/>
+				<data android:pathPattern=".*\\.nbu"/>
+				<data android:host="*"/>
+			</intent-filter>
+		</activity>
+		<activity
+				android:name="ir.omidzakeri.notepad.activities.editfolders.EditFoldersActivity"
+				android:label="Edit Folders"
+				>
+		</activity>
+		<activity
+				android:name="ir.omidzakeri.notepad.activities.note.NoteActivity"
+				android:label="Note Activity"
+				android:theme="@style/AppTheme.WhiteBackground"
+				android:windowSoftInputMode="adjustResize|stateUnchanged"
+				>
+		</activity>
+		<activity
+				android:name="ir.omidzakeri.notepad.activities.DebugActivity"
+				android:label="Debug Activity"
+				>
+		</activity>
+		<activity
+				android:name="ir.omidzakeri.notepad.activities.note.DrawingActivity"
+				android:label="Drawing Activity"
+				android:theme="@style/AppTheme.WhiteBackground"
+				>
+		</activity>
+		<activity
+				android:name="ir.omidzakeri.notepad.activities.addtofolders.AddToFoldersActivity"
+				android:label="Edit Folders"
+				>
+		</activity>
+	</application>
+
+</manifest>
